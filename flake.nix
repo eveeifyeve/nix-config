@@ -134,9 +134,11 @@
     };
     nix-output-monitor = {
       url = "github:xokdvium/nix-output-monitor/fetch-to-store-activity";
-      inputs.git-hooks.follows = "git-hooks";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.inputs.systems.follows = "systems";
+      inputs = {
+        flake-utils.inputs.systems.follows = "systems";
+        git-hooks.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     nixbsd = {
       url = "github:nix-community/nixbsd";
@@ -162,6 +164,9 @@
     };
     nixpkgs-kotlin-lsp = {
       url = "github:bew/nixpkgs/init-kotlin-lsp";
+    };
+    nixpkgs-rift = {
+      url = "github:NixOS/nixpkgs?ref=refs/pull/576297/head";
     };
     nixvim = {
       url = "github:nix-community/nixvim";

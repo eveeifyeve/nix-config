@@ -13,7 +13,7 @@
         ];
       };
       nixpkgs-491420 = import nixpkgs-491420-drv {
-        inherit (pkgs.stdenv) system;
+        inherit (pkgs.stdenv.hostPlatform) system;
         config.allowUnfreePackages = [ "roblox" ];
       };
     in

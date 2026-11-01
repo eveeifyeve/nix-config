@@ -4,6 +4,15 @@
       cmp_luasnip.enable = true;
       luasnip.enable = true;
       friendly-snippets.enable = true;
+      cmp.settings = {
+        snippet.expand = "luasnip";
+        sources = [
+          {
+            name = "luasnip";
+            keywordLength = 3;
+          }
+        ];
+      };
     };
   };
 

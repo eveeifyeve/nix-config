@@ -1258,6 +1258,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-rift": {
+      "locked": {
+        "lastModified": 1793576529,
+        "narHash": "sha256-CPhg3wOPp5VHg7M1hxLZFXEFszhyP9TmJO7X9qXfZnU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "59cbf06bdfdf6b11eb8129bad6d731895c694123",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "refs/pull/576297/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixvim": {
       "inputs": {
         "flake-parts": [
@@ -1379,6 +1395,7 @@
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",
         "nixpkgs-kotlin-lsp": "nixpkgs-kotlin-lsp",
+        "nixpkgs-rift": "nixpkgs-rift",
         "nixvim": "nixvim",
         "omp": "omp",
         "sops-nix": "sops-nix",

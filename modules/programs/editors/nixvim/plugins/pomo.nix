@@ -4,7 +4,7 @@
     {
       extraPlugins = with pkgs.vimPlugins; [ pomo-nvim ];
       extraConfigLua = ''
-        			require("pomo").setup({
+        require("pomo").setup({
           sessions = {
             pomodoro = {
               { name = "Work", duration = "25m" },
@@ -16,6 +16,6 @@
             },
           },
         })
-        		'';
+      '';
     };
 }

@@ -1,10 +1,6 @@
 {
   nixvim.modules.base = {
-    editorconfig.enable = true;
-    viAlias = true;
-    vimAlias = true;
     opts = {
-
       # Numbers
       number = true;
       relativenumber = true;
@@ -28,29 +24,5 @@
       # Folding
       foldlevel = 99;
     };
-
-    globals = {
-      mapleader = " ";
-    };
-
-    # Keymaps
-    keymaps = [
-      {
-        action = "<cmd>LazyGit<CR>";
-        mode = "n";
-        key = "<leader>g";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        action = "<cmd>LazyJJ<CR>";
-        mode = "n";
-        key = "<leader>j";
-        options = {
-          silent = true;
-        };
-      }
-    ];
   };
 }

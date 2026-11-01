@@ -6,7 +6,7 @@
     { pkgs, ... }:
     let
       pkgs-kotlin-lsp = import inputs.nixpkgs-kotlin-lsp {
-        inherit (pkgs.stdenv) system;
+        inherit (pkgs.stdenv.hostPlatform) system;
         config.allowUnfree = true;
       };
     in
