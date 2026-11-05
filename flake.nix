@@ -67,6 +67,12 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:eveeifyeve/home-manager/rift";
       inputs.nixpkgs.follows = "nixpkgs";
