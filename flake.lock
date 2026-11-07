@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "anomalyco-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794008196,
+        "narHash": "sha256-KpwQeqA5jdwkEfqIj9cV2q8ZthMyPkhjtumSrC741e4=",
+        "owner": "anomalyco",
+        "repo": "homebrew-tap",
+        "rev": "53c68131a31587ae43f78ba8bc292c0f5b3b1d34",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anomalyco",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -1387,6 +1403,7 @@
     },
     "root": {
       "inputs": {
+        "anomalyco-tap": "anomalyco-tap",
         "catppuccin-wallpapers": "catppuccin-wallpapers",
         "caveman": "caveman",
         "comin": "comin",

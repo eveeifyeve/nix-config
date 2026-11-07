@@ -8,6 +8,10 @@
   };
 
   inputs = {
+    anomalyco-tap = {
+      url = "github:anomalyco/homebrew-tap";
+      flake = false;
+    };
     catppuccin-wallpapers = {
       url = "github:zhichaoh/catppuccin-wallpapers";
       flake = false;
@@ -69,9 +73,11 @@
     };
     hermes-agent = {
       url = "github:NousResearch/hermes-agent";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.home-manager.follows = "home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     home-manager = {
       url = "github:eveeifyeve/home-manager/rift";
@@ -116,7 +122,6 @@
       inputs = {
         flake-utils.inputs.systems.follows = "systems";
         nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt";
       };
     };
     nix = {
