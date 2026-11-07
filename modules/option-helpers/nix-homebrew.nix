@@ -6,15 +6,23 @@
 }:
 let
   cfg = config.nix-homebrew;
+
+  officialDefaultTaps = {
+    "homebrew/homebrew-core" = inputs.homebrew-core;
+    "homebrew/homebrew-cask" = inputs.homebrew-cask;
+  };
+  allTaps = officialDefaultTaps // cfg.taps;
 in
 {
   options.nix-homebrew = {
     taps = lib.mkOption {
       type = lib.types.attrsOf lib.types.package;
-      default = {
-        "homebrew/homebrew-core" = inputs.homebrew-core;
-        "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      };
+      default = { };
+      description = ''
+        Additional Nix-managed Homebrew taps from pinned flake inputs,
+        e.g. `"anomalyco/tap" = inputs.anomalyco-tap;`. Merges with
+        the official taps managed here.
+      '';
     };
   };
 
@@ -37,13 +45,15 @@ in
       homebrew.enable = true;
       homebrew.onActivation.cleanup = "none";
       system.primaryUser = lib.mkDefault "eveeifyeve";
-      homebrew.taps = builtins.attrNames cfg.taps;
+
+      homebrew.taps = builtins.attrNames allTaps;
 
       nix-homebrew = {
         enable = true;
         mutableTaps = true;
         user = "eveeifyeve";
-        inherit (cfg) taps;
+        taps = allTaps;
+        trust.taps = lib.filter (name: !lib.hasPrefix "homebrew/" name) (builtins.attrNames allTaps);
       };
     };
   };
