@@ -2,10 +2,14 @@
   home.gui =
     hmArgs@{ pkgs, ... }:
     {
-      sops.secrets.opencode-go-apikey-eveeifyeve.sopsFile = ./secrets/opencode-go-apikey;
+      sops.secrets = {
+        opencode-go-apikey-eveeifyeve.sopsFile = ./secrets/opencode-go-apikey;
+        anthropic-apikey.sopsFile = ./secrets/anthropic-apikey; # NOTE: this was gifted
+      };
 
       home.file.".omp/agent/models.yml".source = (pkgs.formats.yaml { }).generate "models.yml" {
         providers.opencode-go.apiKey = "!cat ${hmArgs.config.sops.secrets.opencode-go-apikey-eveeifyeve.path}";
+        providers.anthropic.apiKey = "!cat ${hmArgs.config.sops.secrets.anthropic-apikey.path}";
       };
 
       programs.omp.settings = {
