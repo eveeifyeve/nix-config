@@ -1,5 +1,7 @@
 {
   home.base = hmArgs: {
+    programs.git.settings.url."eveeifyeve.dev@tangled.org".insteadOf = "https://tangled.org";
+
     programs.ssh = {
       includes = [ "${hmArgs.config.home.homeDirectory}/.ssh/hosts/*" ];
       settings."Host *" = {
