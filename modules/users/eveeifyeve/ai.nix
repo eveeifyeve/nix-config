@@ -12,7 +12,11 @@
         theme.dark = "dark-catppuccin"; # TODO: switch to stylix once added a pr.
         computer.enable = true;
         github.enable = true;
-        modelRoles.default = "opencode-go/glm-5.3-flash:max";
+        modelRoles = {
+          default = "opencode-go/glm-5.3-flash:max";
+          open-compact = "opencode-go/muse-spark-1.3-contributor:max";
+          open = "opencode-go/muse-spark-1.3-contributor:xhigh";
+        };
       };
     };
 }
