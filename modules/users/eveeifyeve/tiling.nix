@@ -31,10 +31,7 @@
               };
           };
 
-          virtual_workspaces = {
-            default_workspace_count = 9;
-            workspace_names = [ ];
-          };
+          virtual_workspaces.mode = "per_display";
 
           settings = {
             animate = true;
