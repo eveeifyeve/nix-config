@@ -44,6 +44,15 @@
       };
     };
 
+    disko.devices.lvm_vg.root_vg.lvs.root = {
+      size = "100%FREE";
+      content = {
+        type = "filesystem";
+        format = "ext4";
+        mountpoint = "/";
+      };
+    };
+
     imports = with config.nixos.modules; [
       base
       nixos
