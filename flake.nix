@@ -102,7 +102,7 @@
     hyprland-scroll-overview = {
       url = "github:yayuuu/hyprland-scroll-overview";
       inputs = {
-        flake-parts.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
         hyprland.follows = "hyprland";
         nixpkgs.follows = "nixpkgs";
       };

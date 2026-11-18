@@ -744,7 +744,7 @@
     "hyprland-scroll-overview": {
       "inputs": {
         "flake-parts": [
-          "nixpkgs"
+          "flake-parts"
         ],
         "hyprland": [
           "hyprland"
