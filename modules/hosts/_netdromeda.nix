@@ -19,7 +19,7 @@
     services.kea = {
       dhcp-ddns = {
         enable = true;
-        setting = { };
+        settings = { };
       };
       dhcp4 = {
         enable = true;
