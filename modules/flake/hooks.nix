@@ -7,7 +7,7 @@
     psArgs@{ pkgs, ... }:
     {
       pre-commit.settings = {
-        default_stage = [
+        default_stages = [
           "manual"
           "pre-push"
         ];
