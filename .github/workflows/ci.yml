@@ -15,4 +15,4 @@ jobs:
     uses: stepbrobd/atelier/.github/workflows/discover.yaml@master
     with:
       extra-conf: |
-        extra-experimental-features = pipe-operator
+        extra-experimental-features = pipe-operators
