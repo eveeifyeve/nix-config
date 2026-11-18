@@ -9,7 +9,7 @@
     {
       nixpkgs.hostPlatform = "x86_64-linux";
       imports = [
-        config.nixos.base
+        config.nixos.modules.base
         "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
       ];
       environment.systemPackages = [ pkgs.neovim ];
