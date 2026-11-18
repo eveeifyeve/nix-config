@@ -20,6 +20,10 @@ in
   homeManager.modules.gui =
     { pkgs, ... }:
     lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
-      wayland.windowManager.hyprland.enable = lib.mkDefault true;
+      wayland.windowManager.hyprland = {
+        enable = lib.mkDefault true;
+        package = (hyprland-packages pkgs).hyprland;
+        portalPackage = (hyprland-packages pkgs).xdg-desktop-portal-hyprland;
+      };
     };
 }
