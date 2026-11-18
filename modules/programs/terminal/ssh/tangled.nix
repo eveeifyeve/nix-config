@@ -1,6 +1,4 @@
 {
-  nixos.modules.base = {
-    # https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
-    programs.ssh.knownHosts."github.com".publicKey = "";
-  };
+  ssh.knownHosts."tangled.org".publicKey =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII2UShEm/FFPmYZUizaPnIqOJuynoCQpcLhl5PPHd02n";
 }
